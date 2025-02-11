@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    transition: all 0.4s ease-in-out;
+}
+
+.letter-group {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: transform 0.4s ease-in-out;
+    /* Smooth animation for moving letters */
+}
+
+.letter {
+    width: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: margin 0.4s ease-in-out;
+}
+
+.full-form {
+    font-size: 1.2rem;
+    font-weight: normal;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 0.4s ease-in-out;
+    /* Smooth fade-in and fade-out */
+    position: absolute;
+    left: 80%;
+    margin-left: 10px;
+}
+
+/* Hover Effect */
+.letter-group:hover .full-form {
+    opacity: 1;
+}
+
+/* Move remaining letters to the right */
+.text:hover .letter-group {
+    transition: transform 0.4s ease-in-out;
+}
+
+.letter-group:hover~.letter-group {
+    transform: translateX(80px);
+}
+
+.hover-text {
+    color: rgb(63, 63, 63);
+}
